@@ -1,5 +1,9 @@
+import 'dart:ui';
+
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/dangky/dangky.dart';
+import 'package:flutter_application_1/src/dangnhap/quenmatkhau.dart';
 import 'package:flutter_application_1/src/trangchu/trangchu.dart';
 
 class DangNhap extends StatefulWidget {
@@ -48,16 +52,15 @@ class _DangnhapState extends State<DangNhap> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 70, vertical: 20),
             child: Stack(
-              alignment: AlignmentDirectional
-                  .centerEnd, // cho chữ show nằm cùng hàng vs password
+              alignment: AlignmentDirectional.centerEnd,
               children: <Widget>[
                 TextField(
                   style: TextStyle(fontSize: 18, color: Colors.black),
                   controller: _passwordcontroller,
-                  obscureText: !_showpass, // mật khẩu sẽ hiện dấu chấm tròn
+                  obscureText: !_showpass,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: "Password",
+                    labelText: "Mật khẩu",
                     errorText: _passInvalid ? _passErro : null,
                     labelStyle: TextStyle(
                       color: Color(0xff888888),
@@ -68,9 +71,7 @@ class _DangnhapState extends State<DangNhap> {
                 GestureDetector(
                   onTap: showpass,
                   child: Text(
-                    !_showpass
-                        ? "HIDE"
-                        : "SHOW", // nếu đang showpass sẽ hiện text là hide còn ko thì là show
+                    !_showpass ? "Hiện" : "Ẩn",
                     style: TextStyle(
                         color: Colors.blue,
                         fontSize: 13,
@@ -80,6 +81,23 @@ class _DangnhapState extends State<DangNhap> {
               ],
             ),
           ),
+          Padding(
+              padding: const EdgeInsets.fromLTRB(270, 0, 0, 0),
+              child: RichText(
+                  text: TextSpan(children: <TextSpan>[
+                TextSpan(
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Quenmatkhau()),
+                      );
+                    },
+                  text: "Quên mật khẩu?",
+                  style: TextStyle(color: Colors.blue, fontSize: 16),
+                )
+              ]))),
           Padding(
               padding: EdgeInsets.only(top: 10),
               child: OutlinedButton(
@@ -128,7 +146,7 @@ class _DangnhapState extends State<DangNhap> {
                     ),
                   ],
                 ),
-              ))
+              )),
         ],
       ),
     );
