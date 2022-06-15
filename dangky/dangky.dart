@@ -33,13 +33,17 @@ class _DangkyState extends State<Dangky> {
               style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
             )
           ]),
-          Padding(
-              padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-              child: Icon(
-                Icons.person_pin,
-                size: 150,
-                color: Colors.grey[400],
-              )),
+          Center(
+            child: Column(
+              children: <Widget>[
+                Image.network(
+                  'https://img.lovepik.com/photo/40019/7649.jpg_wh860.jpg',
+                  height: 200,
+                  width: 300,
+                )
+              ],
+            ),
+          ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30),
             child: TextField(
@@ -50,6 +54,9 @@ class _DangkyState extends State<Dangky> {
                   errorText: _userInvalid ? _userErro : null),
             ),
           ),
+          SizedBox(
+            height: 20,
+          ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30),
             child: TextField(
@@ -59,6 +66,9 @@ class _DangkyState extends State<Dangky> {
                   labelText: 'Email',
                   errorText: _emailInvalid ? _emailErro : null),
             ),
+          ),
+          SizedBox(
+            height: 20,
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30),
@@ -72,6 +82,9 @@ class _DangkyState extends State<Dangky> {
               ),
             ),
           ),
+          SizedBox(
+            height: 20,
+          ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 30),
             child: TextField(
@@ -83,6 +96,9 @@ class _DangkyState extends State<Dangky> {
                 errorText: _xacnhanInvalid ? _xacnhanmatkhauErro : null,
               ),
             ),
+          ),
+          SizedBox(
+            height: 20,
           ),
           Padding(
               padding: EdgeInsets.only(top: 10),
