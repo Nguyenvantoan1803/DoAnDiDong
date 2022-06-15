@@ -32,13 +32,14 @@ class _DangnhapState extends State<DangNhap> {
               style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
             )
           ]),
-          Padding(
-              padding: const EdgeInsets.fromLTRB(0, 40, 0, 70),
-              child: Icon(
-                Icons.person_pin,
-                size: 150,
-                color: Colors.grey[400],
-              )),
+          Center(
+            child: Column(
+              children: <Widget>[
+                Image.network(
+                    'https://img.lovepik.com/photo/40019/7649.jpg_wh860.jpg')
+              ],
+            ),
+          ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 70, vertical: 20),
             child: TextField(
