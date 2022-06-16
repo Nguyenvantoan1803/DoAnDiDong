@@ -14,7 +14,8 @@ class DanhSachBaiViettheophong extends StatefulWidget {
 }
 
 class _DanhSachBaiViettheophongState extends State<DanhSachBaiViettheophong> {
-  bool _like = true;
+  bool _like = false;
+  int _demlike = 250;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -120,19 +121,34 @@ class _DanhSachBaiViettheophongState extends State<DanhSachBaiViettheophong> {
               ),
             ),
           ),
-          Padding(padding: EdgeInsets.only(left: 100)),
+          Padding(
+            padding: EdgeInsets.only(left: 100),
+            child: Row(
+              children: <Widget>[
+                Icon(
+                  Icons.thumb_up,
+                  size: 20,
+                ),
+                Text(_demlike.toString()),
+              ],
+            ),
+          ),
           Padding(
             padding: EdgeInsets.only(left: 100),
             child: Row(
               children: <Widget>[
                 TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      _like = !_like;
+                      _demlike += (_like ? 1 : -1);
+                      setState(() {});
+                    },
                     child: _like
                         ? const Text(
                             "Thích",
                             style: TextStyle(color: Colors.blue),
                           )
-                        : const Text("Thích",
+                        : const Text(" Thích",
                             style: TextStyle(color: Colors.black)))
               ],
             ),
