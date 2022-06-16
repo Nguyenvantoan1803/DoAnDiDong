@@ -37,7 +37,18 @@ class _TrangchuState extends State<Trangchu> {
                 subtitle: Text("chương trình hiến máu nhân đạo"),
                 onTap: () {},
               ),
-     
+              Text(
+                "Tin tức xem nhiều nhất",
+                style: TextStyle(
+                  fontSize: 20,
+                  backgroundColor: Colors.blue,
+                ),
+              ),
+              ListTile(
+                title: Text('Phòng đào tạo'),
+                subtitle: Text('Thời khóa biểu áp dụng ngày (05/02...'),
+                onTap: () {},
+              ),
             ]))],)
       
       
