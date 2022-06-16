@@ -121,7 +121,7 @@ class _TrangchuState extends State<Trangchu> {
       color: Colors.green,
       child: ListView(
         children: [
-          Image.asset('images/ckc2.jpg'),
+          Image.asset('images/ckc2.jpg '),
         ],
       ));
 }
