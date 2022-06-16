@@ -19,7 +19,29 @@ class _TrangchuState extends State<Trangchu> {
         title: Text('Trang chủ'),
         centerTitle: true,
       ),
-      body: Center(
+    body: Column(children: [
+         
+          Container(
+            child: ListView(
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                children: <Widget>[
+              Text(
+                "Tin tức nỗi bật",
+                style: TextStyle(
+                  fontSize: 20,
+                  backgroundColor: Colors.blue,
+                ),
+              ),
+              ListTile(
+                title: Text('Phòng CTCT-HSSV'),
+                subtitle: Text("chương trình hiến máu nhân đạo"),
+                onTap: () {},
+              ),
+     
+            ]))],)
+      
+      
+       Center(
           child: CarouselSlider.builder(
               options: CarouselOptions(
                   height: 400,
