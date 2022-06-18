@@ -76,7 +76,16 @@ class _TrangchuState extends State<Trangchu> {
             ],
           ),
         ),
-        body: Container(
+        body:
+          Column(children: [
+          Container(  padding: EdgeInsets.all(10),  
+          margin: EdgeInsets.all(5),  
+          alignment: Alignment.center,  
+          constraints: BoxConstraints.expand(  
+              height: 225  
+          ),  
+          child: imageSlider(context)),
+
             child: ListView(
                 padding: EdgeInsets.fromLTRB(10, 20, 10, 0),
                 children: <Widget>[
